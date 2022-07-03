@@ -32,7 +32,7 @@ class Task(db.Model):
 
     task_description = db.Column(db.Text, nullable=False)
     # note that this column's data type is Text rather than String. Text allows for longer strings than String, much like how a textarea element allows longer inputs than a standard input element
-    
+
     id_urgent = db.Column(db.Boolean, default=False, nullable=False)
     # this column's datatype is Boolean, meaning that it can only hold values of true and false. The default value is false
 

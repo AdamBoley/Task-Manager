@@ -48,3 +48,10 @@ exit th python interpreter:
 `exit`
 
 
+
+Prior to running a development server:
+`set_pg` to set the postgres environment variable
+then:
+`python3 run.py` as normal
+
+

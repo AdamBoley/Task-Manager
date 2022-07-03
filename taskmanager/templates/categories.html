@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align teal-text">Task Categories</h3>
+
+<div class="row">
+    <div class="col s12 center-align">
+        <a href="{{ url_for('add_category') }}" class="btn-large teal">
+            Add Category
+            <i class="fas fa-plus-square right"></i>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
