@@ -31,4 +31,20 @@ An env.py file in the main directory
 
 Comments have been added to `run.py`,  `__init__.py` and `routes.py` to show this code, and this may be used as a boilerplate for future applications
 
+Create taskmanager database in postgres:
+`CREATE DATABASE taskmanager;`
+
+Switch to taskmanager database:
+`\c taskmanager`
+
+Push Category and Task class to the postgres database to create tables within the taskmanager database:
+access python interpreter:
+`python3`
+import table models:
+`from taskmanager import db`
+Create tables:
+`db.create_all()`
+exit th python interpreter:
+`exit`
+
 
