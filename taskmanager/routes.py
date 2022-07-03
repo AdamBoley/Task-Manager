@@ -41,3 +41,12 @@ def edit_category(category_id):
     return render_template("edit_category.html", category=category)
     # in the return statement, the first categories is a variable name that can be used in the HTML file
     # the second category is the category variable in the function, which is the category to be edited
+
+
+@app.route("/delete_category/<int:category_id>")
+def delete_category(category_id):
+    category = Category.query.get_or_404(category_id)
+    db.session.delete(category)
+    db.session.commit()
+    return redirect(url_for("categories"))
+

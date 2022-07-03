@@ -55,3 +55,8 @@ then:
 `python3 run.py` as normal
 
 
+
+To try:
+In categories.html:
+Try to implement a modal that holds the delete button - i.e. place the delete button inside a modal, and have the card delete button call that modal
+To get around the problem of modals requiring unique ids, use id="#modal-{{category.id}}" to generate unique IDs using the database category table id column
