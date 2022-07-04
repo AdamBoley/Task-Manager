@@ -50,3 +50,25 @@ def delete_category(category_id):
     db.session.commit()
     return redirect(url_for("categories"))
 
+
+@app.route("/add_task", methods=["GET", "POST"])
+def add_task():
+    categories = list(Category.query.order_by(Category.category_name).all())
+    # categories variable is required because we need to assign each task to a category before it can be created, so we need a list of categories we can used
+    if request.method == "POST":
+        task = Task(
+            task_name=request.form.get("task_name"),
+            task_description=request.form.get("task_description"),
+            id_urgent=(True if request.form.get("is_urgent") else False),
+            due_date=request.form.get("due_date"),
+            category_id=request.form.get("category_id")
+        )
+        db.session.add(task)
+        db.session.commit()
+        return redirect(url_for("home"))
+
+    return render_template("add_task.html", categories=categories)
+    # in the return statement, the first categories is a variable name that can be used in the HTML file
+    # the second category is the category variable in the function, which is the category to be edited
+
+

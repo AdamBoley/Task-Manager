@@ -9,8 +9,8 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Materialize CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"
-        type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <title>Task Manager</title>
 </head>
@@ -20,16 +20,16 @@
         <nav class="teal darken-1">
             <div class="nav-wrapper">
                 <a href="{{ url_for('home') }}" class="brand-logo">Task Manager</a>
-                <a href="{{ url_for('home') }}" data-activates="mobile-demo" class="button-collapse"><i class="fas fa-bars"></i></a>
+                <a href="{{ url_for('home') }}" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('home') }}">New Task</a></li>
+                    <li><a href="{{ url_for('add_task') }}">New Task</a></li>
                     <li><a href="{{ url_for('categories') }}">Task Categories</a></li>
                 </ul>
                 <!-- Mobile navbar - only applies when viewed on mobile devices -->
-                <ul class="side-nav" id="mobile-demo">
+                <ul class="sidenav" id="mobile-demo">
                     <li><a href="{{ url_for('home') }}">Home</a></li>
-                    <li><a href="{{ url_for('home') }}">New Task</a></li>
+                    <li><a href="{{ url_for('add_task') }}">New Task</a></li>
                     <li><a href="{{ url_for('categories') }}">Task Categories</a></li>
                 </ul>
             </div>
@@ -55,7 +55,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Materialize CSS built-in JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 

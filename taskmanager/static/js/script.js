@@ -1,7 +1,19 @@
-document.addEventListener('DOMContentLoaded', function() {
+$(document).ready(function() {
     // initialize mobile side navbar
     // sideNav() is a pre-built function
-    $(".button-collapse").sideNav();
+    $(".sidenav").sidenav();
+
+
+    //initialisation for the Add Tasks page date-picker
+    $('.datepicker').datepicker();
+
+    //initialisation for category_id select:
+    //let categorypicker = document.querySelectorAll('select');
+    //M.FormSelect.init(categorypicker);
+    $('select').formSelect();
+
+
 })
+
 
 
