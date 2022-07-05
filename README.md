@@ -121,3 +121,13 @@ The add changes from `__init__.py`
 
 Add tables to Heroku database:
 Heroku -> Activity -> More -> run console
+`from taskmanager import db`
+`db.create_all()`
+`exit()`
+
+The app is currently inoperative
+
+To try:
+In Heroku console, use `set_pg` command
+Read - https://dev.to/lawrence_eagles/causes-of-heroku-h10-app-crashed-error-and-how-to-solve-them-3jnl
+Remove PORT config var
