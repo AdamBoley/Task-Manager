@@ -76,3 +76,5 @@ When creating the task table in the taskmanager database, I misnamed the column 
 Due dates rendered from the database are in the YYYY-MM-DD format as standard, which is unhelpful. 
 The Jinja / Python strftime ( string from time ) directive has been used to render due dates in a more user-friendly fashion 
 The Jinja for loop in the tasks page also uses the sort method to sort the tasks bu due date
+
+When adding the edit_task functionality, I figured out 90% of what was needed

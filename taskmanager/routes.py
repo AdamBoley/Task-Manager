@@ -62,7 +62,7 @@ def add_task():
         task = Task(
             task_name=request.form.get("task_name"),
             task_description=request.form.get("task_description"),
-            id_urgent=(True if request.form.get("is_urgent") else False),
+            id_urgent=bool(True if request.form.get("is_urgent") else False),
             due_date=request.form.get("due_date"),
             category_id=request.form.get("category_id")
         )
@@ -73,5 +73,26 @@ def add_task():
     return render_template("add_task.html", categories=categories)
     # in the return statement, the first categories is a variable name that can be used in the HTML file
     # the second category is the category variable in the function, which is the category to be edited
+
+
+@app.route("/edit_task/<int:task_id>", methods=["GET", "POST"])
+def edit_task(task_id):
+    task = Task.query.get_or_404(task_id)
+    categories = list(Category.query.order_by(Category.category_name).all())
+
+    if request.method == "POST":
+        
+        task.task_name = request.form.get("task_name")
+        task.task_description = request.form.get("task_description")
+        task.id_urgent = bool(True if request.form.get("is_urgent") else False)
+        task.due_date = request.form.get("due_date")
+        task.category_id = request.form.get("category_id")
+        
+        db.session.commit()
+
+    return render_template("edit_task.html", task=task, categories=categories)
+
+
+
 
 
