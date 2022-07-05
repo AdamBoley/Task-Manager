@@ -94,3 +94,22 @@ The output can be transcribed to a requirements.txt file with:
 Heroku also needs a Procfile:
 `echo web: python run.py > Procfile`
 The echo command will add a blank line to the bottom of the Procfile. This can cause issues with deploying, so delete it
+
+
+The postgres database that holds the task and category tables is hosted locally, so Heroku will not be able to use it
+
+Heroku will therefore need a database of its own
+
+On the resources tab, under add-ons, search for Heroku Postgres and add it
+
+Under Settings, a new Config Var will be created - DATABASE_URL with an associate value
+
+In the local env.py file there is a DB_URL key, with a value of the local postgres database
+
+DATABASE_URL and DB_URL are two completely separate databases
+
+All environment variables in the env.py file should be added to the Heroku Config Vars, except the DEVELOPMENT and DB_URL variables
+
+A small conditional check in the `__init__.py` file needs to be added to specify which database to use. If "DEVELOPMENT" == "True", use DB_URL, else use DATABASE_URL
+
+
