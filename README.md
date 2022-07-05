@@ -117,3 +117,7 @@ Connect to Heroku, set remote and push as normal
 
 Then check Config Vars. If the DATABASE_URL starts with postgres, make modifications to the `__init__.py` file:
 import re
+The add changes from `__init__.py`
+
+Add tables to Heroku database:
+Heroku -> Activity -> More -> run console
