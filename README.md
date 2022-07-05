@@ -64,3 +64,15 @@ To get around the problem of modals requiring unique ids, use id="#modal-{{categ
 Use emailJS to send notifications and updates when tasks are created, deleted, close to due date, etc
 
 
+
+Note:
+I was able to add functionality that displays tasks on the homepage using a Materialize collapsible list by myself, using code from the add_category function. I'm still not sure how this works
+
+
+Note: 
+When creating the task table in the taskmanager database, I misnamed the column that determines if a task is urgent as "id_urgent". It should be "is_urgent", but I currently do not have the knowledge to change column headers
+
+
+Due dates rendered from the database are in the YYYY-MM-DD format as standard, which is unhelpful. 
+The Jinja / Python strftime ( string from time ) directive has been used to render due dates in a more user-friendly fashion 
+The Jinja for loop in the tasks page also uses the sort method to sort the tasks bu due date

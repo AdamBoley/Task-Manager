@@ -12,7 +12,8 @@ $(document).ready(function() {
     //M.FormSelect.init(categorypicker);
     $('select').formSelect();
 
-
+    //initialisation for home page collapsible tasks list
+    $('.collapsible').collapsible();
 })
 
 

@@ -5,10 +5,13 @@ from taskmanager.models import Category, Task
 
 @app.route("/")
 def home():
-    return render_template("tasks.html")
+    tasks = list(Task.query.order_by(Task.id).all())
+
+    return render_template("tasks.html", tasks=tasks)
 
 
-# up to here is the standard way to set up a Flask application, except with home.html
+# up to here is the standard way to set up a Flask application,
+# except with home.html instead of tasks.html
 
 
 @app.route("/categories")
