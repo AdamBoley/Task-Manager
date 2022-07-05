@@ -113,3 +113,7 @@ All environment variables in the env.py file should be added to the Heroku Confi
 A small conditional check in the `__init__.py` file needs to be added to specify which database to use. If "DEVELOPMENT" == "True", use DB_URL, else use DATABASE_URL
 
 
+Connect to Heroku, set remote and push as normal
+
+Then check Config Vars. If the DATABASE_URL starts with postgres, make modifications to the `__init__.py` file:
+import re
