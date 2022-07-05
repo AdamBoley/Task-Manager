@@ -58,8 +58,9 @@ then:
 
 To try:
 In categories.html:
-Try to implement a modal that holds the delete button - i.e. place the delete button inside a modal, and have the card delete button call that modal
-To get around the problem of modals requiring unique ids, use id="#modal-{{category.id}}" to generate unique IDs using the database category table id column
+Try to implement a modal that holds the delete buttons on both the tasks and categories pages  - i.e. place the delete buttons inside modals, and have the delete buttons call that modal.
+To get around the problem of modals requiring unique ids, use id="#modal-{{category.id}}" or id="#modal-{{task.id}}" to generate unique IDs using the database category table category_id and task table task_id columns
+Specifically for the functionality to delete categories, warn users that all tasks assigned to that category will be deleted as well
 
 Use emailJS to send notifications and updates when tasks are created, deleted, close to due date, etc
 
