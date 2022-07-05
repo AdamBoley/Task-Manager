@@ -79,3 +79,18 @@ The Jinja / Python strftime ( string from time ) directive has been used to rend
 The Jinja for loop in the tasks page also uses the sort method to sort the tasks bu due date
 
 When adding the edit_task functionality, I figured out 90% of what was needed
+
+
+Deployment notes:
+Heroku needs a file called `requirements.txt`
+This tells Heroku what dependencies and packages are installed
+
+Run `pip3 list`
+This shows all of the packages installed in the workspace
+
+The output can be transcribed to a requirements.txt file with:
+`pip3 freeze --local > requirements.txt`
+
+Heroku also needs a Procfile:
+`echo web: python run.py > Procfile`
+The echo command will add a blank line to the bottom of the Procfile. This can cause issues with deploying, so delete it
